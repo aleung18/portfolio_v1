@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* importing tailwind configs */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Hey Tiny';
+  src: url('/fonts/HeyTinyDemoRegular-GOa9g.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plunct';
+  src: url('/fonts/plunct.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typing 1s steps(9, end)
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 70px;
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.input {
+  width: 100%;
+  height: 44px;
+  outline: none;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid white;
+}
+
+textarea.input {
+  height: 100px; /* Set the initial height */
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  padding: 8px 0; /* Ensure padding for text inside the textarea */
+}
+
+.label {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: white;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font-size: 24px;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label,
+.textarea:focus + .label,
+.textarea:not(:placeholder-shown) + .label {
+  top: -24px;
+  font-size: 18px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8); /* Add your desired background color */
+  backdrop-filter: blur(10px); /* Optional: add blur for a nicer effect */
+}
+
+.navbar-line {
+  position: fixed;
+  top: 60px; /* Adjust this value based on the height of your navbar */
+  left: 0;
+  z-index: 1000; /* Ensure it's just below the navbar */
+}
+
+.video-background {
+  position: relative;
+  width: 100%;
+  /* height: 100%; Adjust the height as needed */
+  min-height: 100vh; /* Ensure it covers at least the full viewport height */
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Ensure the track is transparent */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(78, 86, 99); /* Set the thumb to white */
+  border-radius: 25px; /* Optional: round the corners */
+}
+
+textarea.input::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+textarea.input::-webkit-scrollbar-thumb {
+  background-color: white; /* Set the color of the scrollbar thumb */
+  border-radius: 25px; /* Optional: round the corners */
+}
+
+textarea.input::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent */
+}
+
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
