@@ -37,7 +37,7 @@ const Contact = () => {
           </div>
 
           <div id='submit' className="w-full flex justify-center items-center">
-            <button className="text-white font-plunct text-[48px]">Send Message</button>
+            <button type="submit" className="text-white font-plunct text-[48px]">Send Message</button>
           </div>
 
         </form>
