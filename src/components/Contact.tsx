@@ -36,11 +36,11 @@ const Contact = () => {
             <textarea name="message" id="message" className="input relative h-[88px] py-[8px] text-[22px]" required></textarea>
           </div>
 
-        </form>
+          <div id='submit' className="w-full flex justify-center items-center">
+            <button className="text-white font-plunct text-[48px]">Send Message</button>
+          </div>
 
-        <div id='submit' className="flex justify-center items-center">
-          <button className="text-white font-plunct text-[48px]">Send Message</button>
-        </div>
+        </form>
 
         <img src={colorPalette} alt="color palette" className='cursor-pointer h-auto w-[200px] mt-6 block sm:hidden' onClick={() => setPopup(true)}/>
 
