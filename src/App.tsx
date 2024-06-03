@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className='video-background overflow-hidden'>
       <video autoPlay loop muted>
-        <source src="src/assets/film crackle background.mp4" type="video/mp4" />
+        <source src="src/assets/film-crackle-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
