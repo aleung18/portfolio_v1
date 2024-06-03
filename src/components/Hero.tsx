@@ -1,4 +1,4 @@
-import { alfitpic, paperairplane, thumbsup, chalkArrow } from '../assets'
+import { alfitpic, paperairplane, thumbsup } from '../assets'
 import styles from '../style'
 
 import ImageSlider from './ImageSlider';
