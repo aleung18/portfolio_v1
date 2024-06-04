@@ -45,8 +45,8 @@ const Contact = (props : SubmissionPopup) => {
             </div>
         </div>
     );
-  } 
-  else {
+  }
+  else if (!submitted) {
     return "";
   }
 
