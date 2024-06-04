@@ -9,7 +9,6 @@ import './index.css';
 const App = () => {
   const [popup, setPopup] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
-  const [submission, setSubmission] = useState(false);
   const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,7 +56,7 @@ const App = () => {
       <div className={`${styles.flexStart} ${styles.paddingX}`}>
         <div className={`${styles.boxWidth}`}>
           <Skills />
-          <Contact isOpen={submission} children={setSubmission}/>
+          <Contact />
         </div>
       </div>
 

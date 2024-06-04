@@ -2,12 +2,12 @@ import { colorPalette } from '../assets'
 import { PalettePopup } from '../components'
 import { useState } from "react"
 
-type SubmissionPopup = {
-    isOpen: boolean;
-    children: Function;
-  }
+// type SubmissionPopup = {
+//     isOpen: boolean;
+//     children: Function;
+// }
 
-const Contact = (props : SubmissionPopup) => {
+const Contact = () => {
   const [popup, setPopup] = useState(false);
 
   const [submitted, setSubmitted] = useState(false);
