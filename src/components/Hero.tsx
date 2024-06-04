@@ -6,7 +6,7 @@ import ImageSlider from './ImageSlider';
 const images = [alfitpic, paperairplane, thumbsup];
 
 const Hero = () => (
-  <section id='about' className={`flex md:flex-row flex-col sm:px-36 px-6 py-[60px]`}>
+  <section id='about' className={`flex md:flex-row flex-col sm:px-36 px-6 py-[40px]`}>
     <div className={`flex-1 ${styles.flexCenter} flex-col xl:px-0 sm:px-12 px-6`}>
       <div className=''>
         <h2 className='text-white mb-4 font-plunct text-[48px] typewriter'>Hey! I'm:</h2>

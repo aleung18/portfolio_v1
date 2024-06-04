@@ -40,10 +40,14 @@ const Contact = (props : SubmissionPopup) => {
         <div className='popup'>
             <div className='popup-inner sm:max-w-[550px] max-w-[300px] font-heyTiny text-black'>
                 <button className='close-btn text-[24px]' onClick={() => props.children(false)}>close</button>
-                <h3 className='text-[20px] text-center mb-5'>thank's for your message!</h3>
+                <h3 className='text-[20px] text-center mb-5'>thanks for your message!</h3>
+                <p className='text-center'>hope you're doing well :) i'll be in touch soon!</p>
             </div>
         </div>
-    )
+    );
+  } 
+  else {
+    return "";
   }
 
   return (
