@@ -35,17 +35,9 @@ const Contact = () => {
     }
   };
 
-  if (submitted) {
-    return (
-        <div className='popup'>
-            <div className='popup-inner sm:max-w-[550px] max-w-[300px] font-heyTiny text-black'>
-                <button className='close-btn text-[24px]' onClick={() => setSubmitted(false)}>close</button>
-                <h3 className='text-[20px] text-center mb-5'>thanks for your message!</h3>
-                <p className='text-center'>hope you're doing well :) i'll be in touch soon!</p>
-            </div>
-        </div>
-    );
-  }
+  const closePopup = () => {
+    setSubmitted(false);
+  };
 
   return (
     <section id='contact' className='w-full flex flex-col py-[120px] sm:px-36 px-6'>
@@ -88,6 +80,16 @@ const Contact = () => {
         <img src={colorPalette} alt="color palette" className='cursor-pointer h-auto w-[200px] mt-6 block sm:hidden' onClick={() => setPopup(true)}/>
 
         <PalettePopup isOpen={popup} children={setPopup}/>
+
+        { submitted && (
+            <div className='popup'>
+                <div className='popup-inner sm:max-w-[550px] max-w-[300px] font-heyTiny text-black'>
+                    <button className='close-btn text-[24px]' onClick={() => closePopup}>close</button>
+                    <h3 className='text-[20px] text-center mb-5'>thanks for your message!</h3>
+                    <p className='text-center'>hope you're doing well ☺. i'll be in touch soon!</p>
+                </div>
+            </div>
+        )}
       </div>
     </section>
   )
