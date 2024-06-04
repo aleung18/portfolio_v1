@@ -36,7 +36,7 @@ const Contact = (props : SubmissionPopup) => {
   };
 
   if (submitted) {
-    return (
+    return (props.isOpen) ? (
         <div className='popup'>
             <div className='popup-inner sm:max-w-[550px] max-w-[300px] font-heyTiny text-black'>
                 <button className='close-btn text-[24px]' onClick={() => props.children(false)}>close</button>
@@ -44,10 +44,7 @@ const Contact = (props : SubmissionPopup) => {
                 <p className='text-center'>hope you're doing well :) i'll be in touch soon!</p>
             </div>
         </div>
-    );
-  }
-  else if (!submitted) {
-    return "";
+    ) : ""
   }
 
   return (
