@@ -55,7 +55,7 @@ const Contact = (props : SubmissionPopup) => {
       </div>
 
       <div className="font-plunct text-white flex flex-col justify-center items-center">
-        <form id="contact-form" name="contact" data-netlify="true" method="POST" netlify-honeypot="bot-field" className="inline-flex flex-wrap justify-between w-full">
+        <form id="contact-form" name="contact" data-netlify="true" method="POST" netlify-honeypot="bot-field" className="inline-flex flex-wrap justify-between w-full" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact"/>
           <p className="hidden">
             <label>
