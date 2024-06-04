@@ -30,6 +30,7 @@ const Contact = () => {
             body: formDataString,
         });
         setSubmitted(true);
+        form.reset();
     } catch (err) {
         alert(err);
     }
