@@ -2,8 +2,50 @@ import { colorPalette } from '../assets'
 import { PalettePopup } from '../components'
 import { useState } from "react"
 
-const Contact = () => {
+type SubmissionPopup = {
+    isOpen: boolean;
+    children: Function;
+  }
+
+const Contact = (props : SubmissionPopup) => {
   const [popup, setPopup] = useState(false);
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (!form) return;
+    let data = new FormData(form);
+
+    // Convert FormData to URL-encoded string
+    let formDataString = Array.from<[string, string]>(data.entries() as Iterable<[string, string]>)
+        .map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(value))
+        .join('&');
+
+    try {
+        await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: formDataString,
+        });
+        setSubmitted(true);
+    } catch (err) {
+        alert(err);
+    }
+  };
+
+  if (submitted) {
+    return (
+        <div className='popup'>
+            <div className='popup-inner sm:max-w-[550px] max-w-[300px] font-heyTiny text-black'>
+                <button className='close-btn text-[24px]' onClick={() => props.children(false)}>close</button>
+                <h3 className='text-[20px] text-center mb-5'>thank's for your message!</h3>
+            </div>
+        </div>
+    )
+  }
+
   return (
     <section id='contact' className='w-full flex flex-col py-[120px] sm:px-36 px-6'>
       <div className='mb-6'>
