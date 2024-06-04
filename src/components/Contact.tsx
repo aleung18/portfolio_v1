@@ -13,7 +13,7 @@ const Contact = () => {
       </div>
 
       <div className="font-plunct text-white flex flex-col justify-center items-center">
-        <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="inline-flex flex-wrap justify-between w-full">
+        <form id="contact-form" name="contact" {...{ "netlify": true }} method="POST" netlify-honeypot="bot-field" className="inline-flex flex-wrap justify-between w-full">
           <input type="hidden" name="form-name" value="contact"/>
           <p className="hidden">
             <label>
